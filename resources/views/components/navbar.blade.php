@@ -1,10 +1,6 @@
 <header
-    x-data="{ open: false, scrolled: false }"
-    @scroll.window="scrolled = window.scrollY > 20"
-    :class="scrolled
-        ? 'bg-white/95 shadow-sm border-gray-100'
-        : 'bg-white border-transparent'"
-    class="fixed top-0 left-0 right-0 z-50 border-b backdrop-blur-md transition-all duration-300"
+    x-data="{ open: false }"
+    class="fixed top-0 left-0 right-0 z-50 bg-white border-b border-gray-200"
 >
     <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
         <div class="h-20 flex items-center justify-between">
@@ -60,11 +56,11 @@
                 <a
                     href="https://wa.me/6281130521216"
                     target="_blank"
-                    class="ml-2 inline-flex items-center gap-2 rounded-full bg-[#cb1e1b] px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition hover:bg-[#a91614] hover:shadow-md"
+                    class="group ml-2 h-11 inline-flex items-center gap-3 bg-[#cb1e1b] px-5 text-sm font-semibold text-white transition-colors hover:bg-[#a91614]"
                 >
                     Hubungi Kami
                     <svg
-                        class="w-4 h-4"
+                        class="w-4 h-4 transition-transform group-hover:translate-x-0.5"
                         fill="none"
                         stroke="currentColor"
                         viewBox="0 0 24 24"
@@ -82,7 +78,7 @@
             {{-- Mobile button --}}
             <button
                 @click="open = !open"
-                class="lg:hidden w-10 h-10 flex items-center justify-center rounded-lg border border-gray-200 text-gray-700"
+                class="lg:hidden w-10 h-10 flex items-center justify-center border border-gray-200 text-gray-700"
             >
                 <svg
                     x-show="!open"

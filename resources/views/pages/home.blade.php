@@ -2,312 +2,219 @@
 
 @section('title', 'PT. Putra Maju Sukses | Beranda')
 
+@push('styles')
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800;900&family=JetBrains+Mono:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+    .font-display {
+        font-family: 'Archivo', 'Inter', sans-serif;
+        letter-spacing: -0.02em;
+    }
+    .font-code {
+        font-family: 'JetBrains Mono', ui-monospace, monospace;
+    }
+    .ledger-row {
+        border-top: 1px solid #e2ddd0;
+    }
+    .ledger-row:last-child {
+        border-bottom: 1px solid #e2ddd0;
+    }
+    .ruler-mark {
+        position: absolute;
+        right: 0;
+        width: 22px;
+        height: 1px;
+        background: rgba(203, 30, 27, 0.45);
+    }
+</style>
+@endpush
+
 @section('content')
 
 {{-- HERO --}}
-<section class="relative min-h-[720px] lg:min-h-[780px] flex items-center overflow-hidden pt-20">
-    {{-- Decorative Lines --}}
-    <div class="absolute top-32 right-0 w-[420px] h-[420px] pointer-events-none opacity-40">
-        <div class="absolute right-0 top-0 w-72 h-72 border-t-2 border-r-2 border-[#cb1e1b]"></div>
-        <div class="absolute right-16 top-16 w-72 h-72 border-t-2 border-r-2 border-[#cb1e1b]"></div>
-        <div class="absolute right-32 top-32 w-72 h-72 border-t-2 border-r-2 border-[#cb1e1b]"></div>
+<section class="relative overflow-hidden pt-32 pb-16 lg:pt-40 lg:pb-20 bg-[#faf9f5]">
+    {{-- Ruler mark: a single deliberate device, not decoration --}}
+    <div class="hidden lg:block absolute top-28 bottom-20 right-10 w-px bg-[#e2ddd0]">
+        @for ($i = 0; $i <= 10; $i++)
+            <span class="ruler-mark" style="top: {{ $i * 10 }}%; width: {{ $i % 5 === 0 ? '22px' : '10px' }};"></span>
+        @endfor
     </div>
 
-    <div class="absolute bottom-0 left-0 w-40 h-40 border-l-2 border-b-2 border-[#cb1e1b]/30"></div>
-    <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 w-full relative">
-        <div class="max-w-4xl">
-            <div class="inline-flex items-center gap-3 mb-7">
-                <span class="w-10 h-[2px] bg-[#cb1e1b]"></span>
-                <span class="text-[#cb1e1b] text-sm font-bold tracking-[0.18em] uppercase">
-                    PT. Putra Maju Sukses
-                </span>
-            </div>
-
-            <h1 class="text-4xl sm:text-5xl lg:text-7xl font-extrabold tracking-tight text-[#3f3f3f] leading-[1.08]">
-                Membangun
-                <span class="text-[#cb1e1b]">
-                    kebutuhan bisnis
-                </span>
-                untuk masa depan.
-            </h1>
-
-            <p class="mt-7 text-base sm:text-lg text-gray-500 leading-relaxed max-w-2xl">
-                Kami hadir dengan berbagai solusi produk dan layanan,
-                mulai dari perdagangan peralatan rumah tangga,
-                teknologi informasi, komputer, hingga kebutuhan bisnis lainnya.
-            </p>
-
-            <div class="mt-9 flex flex-col sm:flex-row gap-3">
-                <a
-                    href="{{ route('services') }}"
-                    class="inline-flex items-center justify-center gap-2 rounded-full bg-[#cb1e1b] px-7 py-3.5 text-sm font-semibold text-white shadow-lg shadow-red-900/10 hover:bg-[#a91614] transition"
-                >
-                    Jelajahi Layanan
-                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
-                    </svg>
-                </a>
-
-                <a
-                    href="{{ route('contact') }}"
-                    class="inline-flex items-center justify-center rounded-full border border-gray-300 px-7 py-3.5 text-sm font-semibold text-gray-700 hover:border-[#cb1e1b] hover:text-[#cb1e1b] transition"
-                >
-                    Hubungi Kami
-                </a>
-            </div>
+    <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 relative">
+        <div class="flex items-center gap-3 mb-8">
+            <span class="font-code text-xs font-semibold text-[#cb1e1b]">PT.001</span>
+            <span class="w-8 h-px bg-[#cb1e1b]"></span>
+            <span class="text-xs font-semibold text-[#5c5752] tracking-wide">Putra Maju Sukses, Denpasar Bali</span>
         </div>
 
-        {{-- Info strip --}}
-        <div class="mt-20 grid grid-cols-2 lg:grid-cols-4 border-y border-gray-200">
-            <div class="py-7 pr-6">
-                <p class="text-2xl font-bold text-[#3f3f3f]">
-                    14+
-                </p>
-                <p class="text-sm text-gray-500 mt-1">
-                    Bidang Usaha
-                </p>
-            </div>
+        <h1 class="font-display max-w-5xl text-[13vw] sm:text-6xl lg:text-[5.5rem] font-black leading-[0.98] text-[#221f1c]">
+            Satu perusahaan.
+            <br>
+            Empat belas bidang usaha.
+        </h1>
 
-            <div class="py-7 px-6 border-l border-gray-200">
-                <p class="text-2xl font-bold text-[#3f3f3f]">
-                    IT
-                </p>
-                <p class="text-sm text-gray-500 mt-1">
-                    Solusi Teknologi
-                </p>
-            </div>
+        <p class="mt-8 max-w-xl text-base sm:text-lg text-[#5c5752] leading-relaxed">
+            Dari peralatan rumah tangga hingga teknologi informasi,
+            kami menjalankan kegiatan perdagangan dan jasa lintas sektor
+            di bawah satu badan usaha yang sama.
+        </p>
 
-            <div class="py-7 px-6 border-t lg:border-t-0 lg:border-l border-gray-200">
-                <p class="text-2xl font-bold text-[#3f3f3f]">
-                    Bali
-                </p>
-                <p class="text-sm text-gray-500 mt-1">
-                    Berbasis di Denpasar
-                </p>
-            </div>
-
-            <div class="py-7 pl-6 border-l border-gray-200 border-t lg:border-t-0">
-                <p class="text-2xl font-bold text-[#cb1e1b]">
-                    24/7
-                </p>
-                <p class="text-sm text-gray-500 mt-1">
-                    Terhubung Secara Digital
-                </p>
-            </div>
-        </div>
-    </div>
-</section>
-
-{{-- ABOUT PREVIEW --}}
-<section class="py-24 bg-gray-50">
-    <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
-        <div class="grid lg:grid-cols-2 gap-14 items-center">
-            <div>
-                <span class="section-label">
-                    Tentang Kami
-                </span>
-
-                <h2 class="mt-5 text-3xl sm:text-4xl font-bold text-[#3f3f3f] leading-tight">
-                    Satu perusahaan,
-                    <span class="text-[#cb1e1b]">
-                        berbagai kebutuhan.
-                    </span>
-                </h2>
-
-                <p class="mt-6 text-gray-500 leading-relaxed">
-                    PT. Putra Maju Sukses bergerak dalam berbagai bidang
-                    perdagangan dan jasa. Dengan cakupan usaha yang luas,
-                    kami berkomitmen menyediakan produk dan layanan yang
-                    dapat mendukung kebutuhan individu maupun bisnis.
-                </p>
-
-                <a
-                    href="{{ route('about') }}"
-                    class="inline-flex items-center gap-2 mt-7 text-sm font-semibold text-[#cb1e1b] hover:gap-3 transition-all"
-                >
-                    Selengkapnya
-
-                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
-                    </svg>
-                </a>
-            </div>
-
-            <div class="grid grid-cols-2 gap-4">
-                <div class="bg-white p-7 rounded-2xl border border-gray-100 card-hover">
-                    <div class="w-12 h-12 rounded-xl bg-red-50 text-[#cb1e1b] flex items-center justify-center mb-5">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M3 7h18M5 7v13h14V7M8 7V4h8v3"/>
-                        </svg>
-                    </div>
-
-                    <h3 class="font-bold text-[#3f3f3f]">
-                        Perdagangan
-                    </h3>
-
-                    <p class="mt-2 text-sm text-gray-500 leading-relaxed">
-                        Berbagai kebutuhan produk dan perlengkapan.
-                    </p>
-                </div>
-
-                <div class="bg-white p-7 rounded-2xl border border-gray-100 card-hover mt-8">
-                    <div class="w-12 h-12 rounded-xl bg-red-50 text-[#cb1e1b] flex items-center justify-center mb-5">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M4 5h16v14H4zM8 9h8M8 13h5"/>
-                        </svg>
-                    </div>
-
-                    <h3 class="font-bold text-[#3f3f3f]">
-                        Teknologi
-                    </h3>
-
-                    <p class="mt-2 text-sm text-gray-500 leading-relaxed">
-                        Solusi teknologi informasi dan komputer.
-                    </p>
-                </div>
-
-                <div class="bg-white p-7 rounded-2xl border border-gray-100 card-hover">
-                    <div class="w-12 h-12 rounded-xl bg-red-50 text-[#cb1e1b] flex items-center justify-center mb-5">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M12 3v18M3 12h18"/>
-                        </svg>
-                    </div>
-
-                    <h3 class="font-bold text-[#3f3f3f]">
-                        Beragam Produk
-                    </h3>
-
-                    <p class="mt-2 text-sm text-gray-500 leading-relaxed">
-                        Produk untuk kebutuhan rumah dan bisnis.
-                    </p>
-                </div>
-
-                <div class="bg-white p-7 rounded-2xl border border-gray-100 card-hover mt-8">
-                    <div class="w-12 h-12 rounded-xl bg-red-50 text-[#cb1e1b] flex items-center justify-center mb-5">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M5 12l4 4L19 6"/>
-                        </svg>
-                    </div>
-
-                    <h3 class="font-bold text-[#3f3f3f]">
-                        Profesional
-                    </h3>
-
-                    <p class="mt-2 text-sm text-gray-500 leading-relaxed">
-                        Mengutamakan pelayanan dan kebutuhan pelanggan.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-
-{{-- SERVICES --}}
-<section class="py-24">
-    <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
-        <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
-            <div>
-                <span class="section-label">
-                    Bidang Usaha
-                </span>
-
-                <h2 class="mt-5 text-3xl sm:text-4xl font-bold text-[#3f3f3f]">
-                    Layanan & KBLI
-                </h2>
-
-            </div>
-
-            <a
-                href="{{ route('services') }}"
-                class="text-sm font-semibold text-[#cb1e1b]"
-            >
-                Lihat semua bidang usaha →
+        <div class="mt-10 flex flex-wrap items-center gap-4">
+            <a href="{{ route('services') }}"
+               class="inline-flex items-center justify-center bg-[#cb1e1b] px-8 py-3.5 text-sm font-semibold text-white hover:bg-[#a91614] transition-colors">
+                Lihat Bidang Usaha
+            </a>
+            <a href="{{ route('contact') }}"
+               class="inline-flex items-center justify-center text-sm font-semibold text-[#221f1c] border-b-2 border-[#221f1c] pb-0.5 hover:border-[#cb1e1b] hover:text-[#cb1e1b] transition-colors">
+                Hubungi Kami
             </a>
         </div>
 
+        {{-- Ledger strip --}}
+        <div class="mt-20 grid grid-cols-2 lg:grid-cols-4 -mx-6 border-t border-[#e2ddd0]">
+            <div class="py-6 px-6 border-b lg:border-b-0 border-r border-[#e2ddd0]">
+                <p class="font-display text-2xl font-bold text-[#221f1c]">14</p>
+                <p class="mt-1 text-xs text-[#5c5752]">Bidang usaha terdaftar</p>
+            </div>
+            <div class="py-6 px-6 border-b lg:border-b-0 border-[#e2ddd0] lg:border-r">
+                <p class="font-display text-2xl font-bold text-[#221f1c]">IT &amp; Komputer</p>
+                <p class="mt-1 text-xs text-[#5c5752]">Salah satu lini utama</p>
+            </div>
+            <div class="py-6 px-6 border-r border-[#e2ddd0]">
+                <p class="font-display text-2xl font-bold text-[#221f1c]">Denpasar</p>
+                <p class="mt-1 text-xs text-[#5c5752]">Domisili perusahaan</p>
+            </div>
+            <div class="py-6 px-6">
+                <p class="font-display text-2xl font-bold text-[#cb1e1b]">24/7</p>
+                <p class="mt-1 text-xs text-[#5c5752]">Layanan terhubung digital</p>
+            </div>
+        </div>
+    </div>
+</section>
 
-        <div class="mt-12 grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+{{-- ABOUT --}}
+<section class="ibm py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
+        <div class="grid lg:grid-cols-12 gap-10 mb-16">
+            <div class="lg:col-span-7">
+                <h2 class="text-3xl sm:text-4xl lg:text-[2.75rem] font-semibold text-[#161616] leading-[1.15] tracking-tight">
+                    Cakupan usaha yang luas, dikelola dalam satu atap.
+                </h2>
+            </div>
+            <div class="lg:col-span-5 flex flex-col justify-end">
+                <p class="text-[#525252] leading-relaxed">
+                    PT. Putra Maju Sukses bergerak dalam berbagai bidang perdagangan
+                    dan jasa. Berikut empat lini yang paling banyak berjalan.
+                </p>
+                <a href="{{ route('about') }}"
+                   class="carbon-btn group mt-6 self-start bg-transparent text-[#161616] border border-[#161616] hover:bg-[#161616] hover:text-white">
+                    Selengkapnya tentang kami
+                    <svg class="w-4 h-4 carbon-arrow" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4">
             @php
-                $services = [
-                    [
-                        'title' => 'Peralatan Rumah Tangga',
-                        'desc' => 'Perdagangan peralatan masak, dapur, elektronik dan kebutuhan rumah tangga.'
-                    ],
-                    [
-                        'title' => 'Teknologi Informasi',
-                        'desc' => 'Aktivitas teknologi informasi dan berbagai jasa komputer lainnya.'
-                    ],
-                    [
-                        'title' => 'Komputer & Software',
-                        'desc' => 'Perdagangan komputer, perlengkapan komputer dan piranti lunak.'
-                    ],
-                    [
-                        'title' => 'Peralatan Olahraga',
-                        'desc' => 'Penyediaan berbagai peralatan dan perlengkapan olahraga.'
-                    ],
-                    [
-                        'title' => 'Alat Musik',
-                        'desc' => 'Perdagangan besar berbagai alat musik dan kebutuhan pendukungnya.'
-                    ],
-                    [
-                        'title' => 'Kebutuhan Bisnis',
-                        'desc' => 'Mesin, peralatan, perlengkapan, alat tulis dan berbagai kebutuhan lainnya.'
-                    ],
+                $lines = [
+                    ['title' => 'Perdagangan', 'desc' => 'Peralatan rumah tangga, dapur, elektronik, olahraga, hingga alat musik.'],
+                    ['title' => 'Teknologi Informasi', 'desc' => 'Aktivitas TI dan jasa komputer, termasuk internet service provider.'],
+                    ['title' => 'Komputer & Piranti Lunak', 'desc' => 'Perdagangan komputer, perlengkapan komputer, dan piranti lunak.'],
+                    ['title' => 'Kebutuhan Bisnis', 'desc' => 'Mesin, alat tulis, bahan konstruksi, dan perlengkapan industri lainnya.'],
                 ];
             @endphp
 
-            @foreach($services as $service)
-                <div class="group p-7 rounded-2xl border border-gray-200 hover:border-[#cb1e1b]/30 hover:shadow-xl hover:shadow-gray-900/5 transition-all duration-300">
-                    <div class="flex items-start justify-between">
-                        <div class="w-11 h-11 rounded-xl bg-red-50 text-[#cb1e1b] flex items-center justify-center">
-                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" d="M12 6v12M6 12h12"/>
-                            </svg>
-                        </div>
-
-                        <span class="text-gray-300 group-hover:text-[#cb1e1b] transition">
-                            →
-                        </span>
-                    </div>
-
-                    <h3 class="mt-6 font-bold text-lg text-[#3f3f3f]">
-                        {{ $service['title'] }}
+            @foreach($lines as $line)
+                <div class="carbon-tile p-6 flex flex-col justify-between min-h-[180px] {{ !$loop->first ? '-ml-px' : '' }}">
+                    <h3 class="font-semibold text-[#161616] leading-snug">
+                        {{ $line['title'] }}
                     </h3>
-
-                    <p class="mt-2 text-sm text-gray-500 leading-relaxed">
-                        {{ $service['desc'] }}
-                    </p>
+                    <div class="flex items-end justify-between gap-2 mt-6">
+                        <p class="text-sm text-[#525252] leading-relaxed">
+                            {{ $line['desc'] }}
+                        </p>
+                        <svg class="w-5 h-5 shrink-0 text-[#161616] carbon-arrow" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M7 17L17 7M7 7h10v10"/>
+                        </svg>
+                    </div>
                 </div>
             @endforeach
         </div>
     </div>
 </section>
 
-{{-- CTA --}}
-<section class="pb-24">
+{{-- SERVICES / KBLI PREVIEW --}}
+<section class="ibm py-24 bg-[#f4f4f4]">
     <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
-        <div class="relative overflow-hidden rounded-3xl bg-[#353535] px-7 py-12 sm:px-12 sm:py-16">
-            <div class="absolute right-0 top-0 w-64 h-64 border-t border-r border-[#cb1e1b]/60"></div>
-            <div class="absolute right-12 top-12 w-64 h-64 border-t border-r border-[#cb1e1b]/30"></div>
-            <div class="relative max-w-2xl">
-                <p class="text-[#ef413d] text-sm font-semibold">
-                    TERHUBUNG DENGAN KAMI
-                </p>
+        <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12">
+            <h2 class="text-3xl sm:text-4xl font-semibold text-[#161616] tracking-tight">
+                Layanan &amp; KBLI
+            </h2>
 
-                <h2 class="mt-3 text-3xl sm:text-4xl font-bold text-white">
+            <a href="{{ route('services') }}"
+               class="carbon-btn group self-start md:self-auto bg-[#cb1e1b] text-white hover:bg-[#a91614]">
+                Lihat seluruh 14 bidang usaha
+                <svg class="w-4 h-4 carbon-arrow" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                </svg>
+            </a>
+        </div>
+
+        @php
+            $preview = [
+                'Perdagangan Besar Peralatan Masak, Peralatan Dapur, dan Elektronik Rumah Tangga',
+                'Aktivitas Teknologi Informasi dan Jasa Komputer Lainnya',
+                'Perdagangan Besar Komputer dan Perlengkapan Komputer',
+                'Perdagangan Besar Piranti Lunak',
+                'Perdagangan Besar Mesin, Peralatan dan Perlengkapan Lainnya',
+                'Internet Service Provider',
+            ];
+        @endphp
+
+        <div class="border-b border-[#e0e0e0]">
+            @foreach($preview as $index => $item)
+                <a href="{{ route('services') }}"
+                   class="carbon-row group flex items-center gap-6 py-5 px-4 -mx-4">
+                    <span class="ibm-mono shrink-0 text-sm font-semibold text-[#cb1e1b]">
+                        {{ str_pad($index + 1, 2, '0', STR_PAD_LEFT) }}
+                    </span>
+                    <span class="flex-1 text-[#161616] font-medium leading-snug">
+                        {{ $item }}
+                    </span>
+                    <svg class="w-5 h-5 shrink-0 text-[#161616] carbon-arrow" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                    </svg>
+                </a>
+            @endforeach
+        </div>
+    </div>
+</section>
+
+{{-- CTA --}}
+<section class="ibm bg-[#161616]">
+    <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 py-20">
+        <div class="h-1 w-16 bg-[#cb1e1b] mb-10"></div>
+
+        <div class="grid lg:grid-cols-12 gap-8 items-end">
+            <div class="lg:col-span-8">
+                <h2 class="text-3xl sm:text-4xl lg:text-[2.75rem] font-semibold text-white leading-[1.15] tracking-tight">
                     Punya kebutuhan atau ingin bekerja sama?
                 </h2>
-
-                <p class="mt-4 text-gray-400">
+                <p class="mt-4 text-[#c6c6c6] max-w-lg">
                     Jangan ragu untuk menghubungi PT. Putra Maju Sukses.
                 </p>
+            </div>
 
-                <a
-                    href="{{ route('contact') }}"
-                    class="inline-flex mt-7 rounded-full bg-white px-6 py-3 text-sm font-semibold text-[#3f3f3f] hover:bg-gray-100 transition"
-                >
+            <div class="lg:col-span-4 lg:flex lg:justify-end">
+                <a href="{{ route('contact') }}"
+                   class="carbon-btn group w-full lg:w-auto mt-6 lg:mt-0 bg-[#cb1e1b] text-white hover:bg-[#a91614]">
                     Hubungi Kami
+                    <svg class="w-4 h-4 carbon-arrow" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                    </svg>
                 </a>
             </div>
         </div>

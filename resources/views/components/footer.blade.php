@@ -1,52 +1,10 @@
-<footer class="bg-[#303030] text-white">
-    {{-- CTA --}}
-    <div class="border-b border-white/10">
-        <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 py-14">
-            <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8">
-                <div>
-                    <p class="text-[#e63a36] text-sm font-semibold mb-2">
-                        PT. PUTRA MAJU SUKSES
-                    </p>
-
-                    <h2 class="text-2xl sm:text-3xl font-bold">
-                        Mari membangun kerja sama bersama kami.
-                    </h2>
-
-                    <p class="mt-3 text-gray-400 max-w-xl">
-                        Hubungi kami untuk informasi lebih lanjut mengenai
-                        produk, layanan, maupun kebutuhan bisnis Anda.
-                    </p>
-                </div>
-
-                <a
-                    href="{{ route('contact') }}"
-                    class="inline-flex items-center justify-center gap-2 rounded-full bg-[#cb1e1b] px-6 py-3 font-semibold transition hover:bg-[#a91614]"
-                >
-                    Hubungi Kami
-                    <svg
-                        class="w-4 h-4"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                    >
-                        <path
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            stroke-width="2"
-                            d="M17 8l4 4m0 0l-4 4m4-4H3"
-                        />
-                    </svg>
-                </a>
-            </div>
-        </div>
-    </div>
-
+<footer class="bg-[#161616] text-white">
     {{-- Main Footer --}}
-    <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 py-12">
+    <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 py-16">
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
             {{-- Brand --}}
             <div class="lg:col-span-2">
-                <div class="bg-white rounded-xl p-3 inline-block mb-5">
+                <div class="bg-white p-3 inline-block mb-5">
                     <img
                         src="{{ asset('images/logo.png') }}"
                         alt="PT. Putra Maju Sukses"

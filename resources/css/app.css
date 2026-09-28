@@ -96,3 +96,68 @@ body {
     border-color: rgba(203, 30, 27, 0.25);
     box-shadow: 0 20px 45px rgba(0, 0, 0, 0.07);
 }
+
+/* --- Carbon-influenced patterns (shared across pages) --- */
+.ibm {
+    font-family: 'IBM Plex Sans', 'Inter', sans-serif;
+}
+
+.ibm-mono {
+    font-family: 'IBM Plex Mono', ui-monospace, monospace;
+}
+
+.carbon-tile {
+    border: 1px solid #e0e0e0;
+    background: #ffffff;
+    transition: border-color 0.1s ease, background-color 0.1s ease;
+}
+
+.carbon-tile:hover {
+    border-color: #cb1e1b;
+    background: #f4f4f4;
+}
+
+.carbon-tile .carbon-arrow {
+    transition: transform 0.15s ease;
+}
+
+.carbon-tile:hover .carbon-arrow {
+    transform: translate(3px, -3px);
+}
+
+.carbon-row {
+    border-top: 1px solid #e0e0e0;
+}
+
+.carbon-row:last-child {
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.carbon-row:hover {
+    background: #f4f4f4;
+}
+
+.carbon-row .carbon-arrow {
+    transition: transform 0.15s ease;
+}
+
+.carbon-row:hover .carbon-arrow {
+    transform: translateX(4px);
+}
+
+.carbon-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    height: 48px;
+    padding: 0 1rem 0 1rem;
+    font-family: 'IBM Plex Sans', 'Inter', sans-serif;
+    font-weight: 500;
+    font-size: 0.875rem;
+}
+
+.carbon-btn:focus-visible {
+    outline: 2px solid #cb1e1b;
+    outline-offset: -2px;
+}
